@@ -122,6 +122,12 @@ class DeepConvNet:
 
         return grads
 
+def one_hot_to(T: np.ndarray):
+    answer = np.zeros(T.shape[0], dtype=int)
+    for idx, row in enumerate(T):
+        answer[idx] = np.argmax(row)
+    return answer
+
 def to_one_hot(X: np.ndarray):
     # x like [1,2,3]
     # return -> [ [0,1,0,0,....],[],[]]
